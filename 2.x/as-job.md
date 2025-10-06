@@ -87,6 +87,20 @@ Bus::chain([
 ])->dispatch();
 ```
 
+To assert a job was chained:
+
+```php
+use Illuminate\Support\Facades\Bus;
+
+Bus::fake();
+
+Bus::assertChained([
+    CreateNewTeamReport::makeJob($team),
+    OptimizeTeamReport::makeJob($team),
+    SendTeamReportEmail::makeJob($team),
+]);
+```
+
 ### `assertPushed`
 Asserts the action was dispatched.
 
