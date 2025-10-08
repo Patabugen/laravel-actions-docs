@@ -87,7 +87,7 @@ Bus::chain([
 ])->dispatch();
 ```
 
-To assert a job was chained:
+Finally, note that you can assert a job was chained by mocking the `Bus` facade like so.
 
 ```php
 use Illuminate\Support\Facades\Bus;
